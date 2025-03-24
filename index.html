@@ -1,4 +1,11 @@
-<style>
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ماڵپەڕی ڕووبار</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap" rel="stylesheet">
+  <style>
     body {
       font-family: 'Noto Sans Arabic', sans-serif;
       direction: rtl;
@@ -6,17 +13,20 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background-color: #121212;
-      color: #f0f0f0;
+      background-color: #f8f5f0;
+      background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 5px 5px;
+      color: #222;
       transition: background 0.3s, color 0.3s;
     }
     header {
-      background: #1e1e1e;
+      background: #e0ddd7;
       padding: 1rem;
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
       position: relative;
+      color: #222;
     }
     .theme-toggle {
       position: absolute;
@@ -29,23 +39,22 @@
     .theme-toggle svg {
       width: 26px;
       height: 26px;
-      stroke: #f0f0f0;
+      stroke: #222;
       fill: none;
       stroke-width: 1.8px;
       transition: stroke 0.3s;
     }
-    .light-mode {
-      background-color: #f8f5f0;
-      color: #222;
-      background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
-      background-size: 5px 5px;
+    .dark-mode {
+      background-color: #121212;
+      background-image: none;
+      color: #f0f0f0;
     }
-    .light-mode header {
-      background: #e0ddd7;
-      color: #222;
+    .dark-mode header {
+      background: #1e1e1e;
+      color: #f0f0f0;
     }
-    .light-mode .theme-toggle svg {
-      stroke: #222;
+    .dark-mode .theme-toggle svg {
+      stroke: #f0f0f0;
     }
     main {
       flex: 1;
@@ -60,4 +69,35 @@
       direction: ltr;
       text-align: left;
     }
-</style>
+  </style>
+</head>
+<body class="light-mode">
+  <header>
+    ماڵپەڕی ڕووبار
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
+      <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <!-- Moon outline -->
+        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+      </svg>
+    </button>
+  </header>
+  <main>
+    <p>ماڵپەڕ لەژێر درووستکردندایە</p>
+    <p class="ltr">rubaarpoetry.com</p>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const icon = document.getElementById('icon');
+      if (document.body.classList.contains('dark-mode')) {
+        // Moon outline
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>';
+      } else {
+        // Sun outline
+        icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+      }
+    }
+  </script>
+</body>
+</html>
