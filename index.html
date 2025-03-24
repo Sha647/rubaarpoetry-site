@@ -9,14 +9,28 @@
     body {
       font-family: 'Noto Sans Arabic', sans-serif;
       direction: rtl;
-      text-align: right;
       background-color: #121212;
       color: #f0f0f0;
+      margin: 0;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #1e1e1e;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    main {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
+      padding: 2rem;
     }
     .ltr {
       direction: ltr;
@@ -25,8 +39,10 @@
   </style>
 </head>
 <body>
-  <p>ماڵپەڕ لەژێر درووستکردندایە</p>
-  <p>ماڵپەڕی ڕووبار</p>
-  <p class="ltr">rubaarpoetry.com</p>
+  <header>ماڵپەڕی ڕووبار</header>
+  <main>
+    <p>ماڵپەڕ لەژێر درووستکردندایە</p>
+    <p class="ltr">rubaarpoetry.com</p>
+  </main>
 </body>
 </html>
