@@ -9,12 +9,13 @@
     body {
       font-family: 'Noto Sans Arabic', sans-serif;
       direction: rtl;
-      background-color: #121212;
-      color: #f0f0f0;
       margin: 0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      background-color: #121212;
+      color: #f0f0f0;
+      transition: background 0.3s, color 0.3s;
     }
     header {
       background: #1e1e1e;
@@ -22,6 +23,32 @@
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
+      position: relative;
+    }
+    .theme-toggle {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .theme-toggle svg {
+      width: 24px;
+      height: 24px;
+      fill: #f0f0f0;
+      transition: fill 0.3s;
+    }
+    .light-mode {
+      background-color: #f8f5f0;
+      color: #222;
+    }
+    .light-mode header {
+      background: #e0ddd7;
+      color: #222;
+    }
+    .light-mode .theme-toggle svg {
+      fill: #222;
     }
     main {
       flex: 1;
@@ -39,10 +66,31 @@
   </style>
 </head>
 <body>
-  <header>ماڵپەڕی ڕووبار</header>
+  <header>
+    ماڵپەڕی ڕووبار
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
+      <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+      </svg>
+    </button>
+  </header>
   <main>
     <p>ماڵپەڕ لەژێر درووستکردندایە</p>
     <p class="ltr">rubaarpoetry.com</p>
   </main>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      const icon = document.getElementById('icon');
+      if (document.body.classList.contains('light-mode')) {
+        icon.setAttribute('viewBox', '0 0 24 24');
+        icon.innerHTML = '<path d="M12 4.5V3m0 18v-1.5m7.07-7.07H21M3 12h1.5m14.14-5.66l1.06-1.06M5.66 18.36l-1.06 1.06m0-14.14l1.06-1.06m12.02 12.02l1.06 1.06M12 7.5A4.5 4.5 0 1012 16.5 4.5 4.5 0 0012 7.5z"/>';
+      } else {
+        icon.setAttribute('viewBox', '0 0 24 24');
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>';
+      }
+    }
+  </script>
 </body>
 </html>
