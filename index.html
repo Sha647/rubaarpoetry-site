@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ماڵپەڕی ڕووبار</title>
 
-  <!-- تعریف فونت‌ها -->
+  <!-- بارگذاری فونت‌ها از پوشه Fonts -->
   <style>
     @font-face {
       font-family: 'RabarTitle';
-      src: url('/fonts/Rabar_019.woff') format('woff');
+      src: url('Fonts/Rabar_019.woff') format('woff');
     }
+
     @font-face {
       font-family: 'RabarText';
-      src: url('/fonts/Rabar_029.woff') format('woff');
+      src: url('Fonts/Rabar_029.woff') format('woff');
     }
 
     body {
@@ -29,6 +30,7 @@
       color: #222;
       transition: background 0.3s, color 0.3s;
     }
+
     header {
       background: #e0ddd7;
       padding: 1rem;
@@ -39,6 +41,7 @@
       color: #222;
       font-family: 'RabarTitle', sans-serif;
     }
+
     .theme-toggle {
       position: absolute;
       left: 1rem;
@@ -47,6 +50,7 @@
       border: none;
       cursor: pointer;
     }
+
     .theme-toggle svg {
       width: 26px;
       height: 26px;
@@ -55,18 +59,22 @@
       stroke-width: 1.8px;
       transition: stroke 0.3s;
     }
+
     .dark-mode {
       background-color: #121212;
       background-image: none;
       color: #f0f0f0;
     }
+
     .dark-mode header {
       background: #1e1e1e;
       color: #f0f0f0;
     }
+
     .dark-mode .theme-toggle svg {
       stroke: #f0f0f0;
     }
+
     main {
       flex: 1;
       display: flex;
@@ -76,6 +84,7 @@
       text-align: center;
       padding: 2rem;
     }
+
     .ltr {
       direction: ltr;
       text-align: left;
