@@ -1,22 +1,9 @@
 <!DOCTYPE html>
-<html lang="ku" dir="rtl">
+<html lang="ku">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ماڵپەڕی ڕووبار</title>
-
-  <!-- بارگذاری فونت‌ها از پوشه Fonts -->
+  <title>rubaarpoetry</title>
   <style>
-    @font-face {
-      font-family: 'RabarTitle';
-      src: url('Fonts/Rabar_019.woff') format('woff');
-    }
-
-    @font-face {
-      font-family: 'RabarText';
-      src: url('Fonts/Rabar_029.woff') format('woff');
-    }
-
     body {
       font-family: 'RabarText', sans-serif;
       direction: rtl;
@@ -31,17 +18,41 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    header {
-  background: #23486A;
-  padding: 2rem; /* دو برابر شده */
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: bold;
-  position: relative;
-  color: #EEEEEE;
-  font-family: 'RabarTitle', sans-serif;
-}
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 12px 24px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 40px;
+      margin-right: 20px; /* چون راست‌چینه، فاصله بین لوگو و اسم */
+    }
+
+    .site-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #23486A;
+    }
+
+    header {
+      background: #23486A;
+      padding: 2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      position: relative;
+      color: #EEEEEE;
+      font-family: 'RabarTitle', sans-serif;
+    }
 
     .theme-toggle {
       position: absolute;
@@ -93,6 +104,14 @@
   </style>
 </head>
 <body class="light-mode">
+
+  <!-- ✅ نوار بالا -->
+  <div class="navbar">
+    <div class="site-name">rubaarpoetry.com</div>
+    <img src="Logo/logorubar.png" alt="Logo" class="logo">
+  </div>
+
+  <!-- ✅ عنوان سایت -->
   <header>
     ماڵپەڕی ڕووبار
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
@@ -101,6 +120,8 @@
       </svg>
     </button>
   </header>
+
+  <!-- ✅ محتوای اصلی -->
   <main>
     <p>ماڵپەڕ لەژێر درووستکردندایە</p>
     <p class="ltr">rubaarpoetry.com</p>
