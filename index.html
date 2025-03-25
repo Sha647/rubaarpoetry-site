@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ماڵپەڕی ڕووبار</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap" rel="stylesheet">
+
+  <!-- تعریف فونت‌ها -->
   <style>
+    @font-face {
+      font-family: 'RabarTitle';
+      src: url('/fonts/Rabar_019.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'RabarText';
+      src: url('/fonts/Rabar_029.woff') format('woff');
+    }
+
     body {
-      font-family: 'Noto Sans Arabic', sans-serif;
+      font-family: 'RabarText', sans-serif;
       direction: rtl;
       margin: 0;
       min-height: 100vh;
@@ -27,6 +37,7 @@
       font-weight: bold;
       position: relative;
       color: #222;
+      font-family: 'RabarTitle', sans-serif;
     }
     .theme-toggle {
       position: absolute;
@@ -76,7 +87,6 @@
     ماڵپەڕی ڕووبار
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
       <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <!-- Moon outline -->
         <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
       </svg>
     </button>
