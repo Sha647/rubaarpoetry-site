@@ -18,7 +18,7 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* ✅ نوار بالا با حاشیه داخلی و وسط‌گرایی بهتر */
+    /* ✅ نوار بالا */
     .header-bar {
       background-color: #23486A;
       color: #EEEEEE;
@@ -28,14 +28,19 @@
       padding: 20px 0;
     }
 
-    .header-content {
-      max-width: 1200px;
+    /* ✅ محتوای نوار بالا با وسط‌گرایی */
+    .header-container {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       position: relative;
+    }
+
+    .header-title {
+      margin: 0;
     }
 
     .logo {
@@ -91,10 +96,9 @@
     }
 
     @media (max-width: 768px) {
-      .header-content {
+      .header-container {
         flex-direction: row-reverse;
-        justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 16px;
       }
 
       .logo {
@@ -111,9 +115,9 @@
 
   <!-- ✅ نوار بالا -->
   <div class="header-bar">
-    <div class="header-content">
+    <div class="header-container">
       <img src="logorubar.png" alt="Logo" class="logo">
-      ماڵپەڕی ڕووبار
+      <div class="header-title">ماڵپەڕی ڕووبار</div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
         <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
