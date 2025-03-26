@@ -18,22 +18,28 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* ✅ نوار بالایی (یکپارچه شده) */
+    /* ✅ نوار بالا با حاشیه داخلی و وسط‌گرایی بهتر */
     .header-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       background-color: #23486A;
-      padding: 20px 40px;
       color: #EEEEEE;
       font-family: 'RabarTitle', sans-serif;
       font-size: 1.8rem;
       font-weight: bold;
+      padding: 20px 0;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: relative;
     }
 
-    .header-bar .logo {
-      height: 120px; /* سه برابر حالت قبلی */
+    .logo {
+      height: 120px;
     }
 
     .theme-toggle {
@@ -83,19 +89,37 @@
       direction: ltr;
       text-align: left;
     }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+
+      .logo {
+        height: 80px;
+      }
+
+      .header-bar {
+        font-size: 1.4rem;
+      }
+    }
   </style>
 </head>
 <body class="light-mode">
 
   <!-- ✅ نوار بالا -->
   <div class="header-bar">
-    <img src="logorubar.png" alt="Logo" class="logo">
-    ماڵپەڕی ڕووبار
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
-      <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
-      </svg>
-    </button>
+    <div class="header-content">
+      <img src="logorubar.png" alt="Logo" class="logo">
+      ماڵپەڕی ڕووبار
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
+        <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- ✅ محتوای اصلی -->
