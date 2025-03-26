@@ -2,6 +2,7 @@
 <html lang="ku">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>rubaarpoetry</title>
   <style>
     body {
@@ -20,7 +21,7 @@
 
     /* ✅ نوار بالا */
     .header-bar {
-      background-color: #3E3F5B; /* رنگ جدید */
+      background-color: #3E3F5B;
       color: #EEEEEE;
       font-family: 'RabarTitle', sans-serif;
       font-size: 1.8rem;
@@ -34,8 +35,9 @@
       padding: 0 20px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       position: relative;
+      gap: 20px;
     }
 
     .header-title {
@@ -46,11 +48,12 @@
       height: 120px;
     }
 
-    /* ✅ آیکون دارک‌مود بالا سمت راست */
+    /* ✅ آیکون دارک‌مود */
     .theme-toggle {
       position: absolute;
-      right: 1rem;
-      top: 1rem;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
       background: none;
       border: none;
       cursor: pointer;
@@ -95,12 +98,13 @@
       text-align: left;
     }
 
-    /* ✅ در موبایل: نزدیک‌تر به وسط */
+    /* ✅ استایل‌های موبایل */
     @media (max-width: 768px) {
       .header-container {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        padding: 0 24px;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 20px;
+        gap: 15px;
       }
 
       .logo {
@@ -110,6 +114,30 @@
       .header-bar {
         font-size: 1.4rem;
       }
+
+      .header-title {
+        font-size: 1.3rem;
+      }
+
+      .theme-toggle {
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-container {
+        gap: 10px;
+      }
+      
+      .logo {
+        height: 60px;
+      }
+      
+      .header-title {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -118,13 +146,13 @@
   <!-- ✅ نوار بالا -->
   <div class="header-bar">
     <div class="header-container">
-      <img src="logorubar.png" alt="Logo" class="logo">
-      <div class="header-title">ماڵپەڕی ڕووبار</div>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
         <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
         </svg>
       </button>
+      <img src="logorubar.png" alt="Logo" class="logo">
+      <div class="header-title">ماڵپەڕی ڕووبار</div>
     </div>
   </div>
 
