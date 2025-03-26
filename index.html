@@ -18,35 +18,22 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    .navbar {
+    /* ✅ نوار بالایی (یکپارچه شده) */
+    .header-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #ffffff;
-      padding: 12px 24px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      height: 40px;
-      margin-right: 20px;
-    }
-
-    .site-name {
-      font-size: 18px;
-      font-weight: bold;
-      color: #23486A;
-    }
-
-    header {
-      background: #23486A;
-      padding: 2rem;
-      text-align: center;
+      background-color: #23486A;
+      padding: 20px 40px;
+      color: #EEEEEE;
+      font-family: 'RabarTitle', sans-serif;
       font-size: 1.8rem;
       font-weight: bold;
       position: relative;
-      color: #EEEEEE;
-      font-family: 'RabarTitle', sans-serif;
+    }
+
+    .header-bar .logo {
+      height: 120px; /* سه برابر حالت قبلی */
     }
 
     .theme-toggle {
@@ -61,7 +48,7 @@
     .theme-toggle svg {
       width: 26px;
       height: 26px;
-      stroke: #222;
+      stroke: #EEEEEE;
       fill: none;
       stroke-width: 1.8px;
       transition: stroke 0.3s;
@@ -73,7 +60,7 @@
       color: #f0f0f0;
     }
 
-    .dark-mode header {
+    .dark-mode .header-bar {
       background: #1e1e1e;
       color: #f0f0f0;
     }
@@ -101,20 +88,15 @@
 <body class="light-mode">
 
   <!-- ✅ نوار بالا -->
-  <div class="navbar">
-    <div class="site-name">rubaarpoetry.com</div>
+  <div class="header-bar">
     <img src="logorubar.png" alt="Logo" class="logo">
-  </div>
-
-  <!-- ✅ عنوان سایت -->
-  <header>
     ماڵپەڕی ڕووبار
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
       <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
       </svg>
     </button>
-  </header>
+  </div>
 
   <!-- ✅ محتوای اصلی -->
   <main>
