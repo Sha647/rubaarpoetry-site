@@ -20,7 +20,7 @@
 
     /* ✅ نوار بالا */
     .header-bar {
-      background-color: #210F37;
+      background-color: #3E3F5B; /* رنگ جدید */
       color: #EEEEEE;
       font-family: 'RabarTitle', sans-serif;
       font-size: 1.8rem;
@@ -28,7 +28,6 @@
       padding: 20px 0;
     }
 
-    /* ✅ محتوای نوار بالا با وسط‌گرایی */
     .header-container {
       max-width: 960px;
       margin: 0 auto;
@@ -47,9 +46,10 @@
       height: 120px;
     }
 
+    /* ✅ آیکون دارک‌مود بالا سمت راست */
     .theme-toggle {
       position: absolute;
-      left: 1rem;
+      right: 1rem;
       top: 1rem;
       background: none;
       border: none;
@@ -95,10 +95,12 @@
       text-align: left;
     }
 
+    /* ✅ در موبایل: نزدیک‌تر به وسط */
     @media (max-width: 768px) {
       .header-container {
         flex-direction: row-reverse;
-        padding: 0 16px;
+        justify-content: space-between;
+        padding: 0 24px;
       }
 
       .logo {
