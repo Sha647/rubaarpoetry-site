@@ -19,7 +19,6 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* ✅ نوار بالا */
     .header-bar {
       background-color: #3E3F5B;
       color: #EEEEEE;
@@ -37,7 +36,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      gap: 20px;
+      gap: 60px; /* فاصله بین لوگو و عنوان */
     }
 
     .header-title {
@@ -48,20 +47,20 @@
       height: 120px;
     }
 
-    /* ✅ آیکون دارک‌مود */
+    /* آیکون دارک مود پایین و کوچک‌تر */
     .theme-toggle {
       position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
+      right: 1rem;
+      bottom: 0.5rem;
       background: none;
       border: none;
       cursor: pointer;
+      padding: 4px;
     }
 
     .theme-toggle svg {
-      width: 26px;
-      height: 26px;
+      width: 18px;
+      height: 18px;
       stroke: #EEEEEE;
       fill: none;
       stroke-width: 1.8px;
@@ -98,13 +97,12 @@
       text-align: left;
     }
 
-    /* ✅ استایل‌های موبایل */
     @media (max-width: 768px) {
       .header-container {
         flex-direction: row;
         justify-content: center;
         padding: 0 20px;
-        gap: 15px;
+        gap: 45px;
       }
 
       .logo {
@@ -120,21 +118,24 @@
       }
 
       .theme-toggle {
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 0.3rem;
+      }
+
+      .theme-toggle svg {
+        width: 16px;
+        height: 16px;
       }
     }
 
     @media (max-width: 480px) {
       .header-container {
-        gap: 10px;
+        gap: 30px;
       }
-      
+
       .logo {
         height: 60px;
       }
-      
+
       .header-title {
         font-size: 1.1rem;
       }
