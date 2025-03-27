@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ku">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>rubaarpoetry</title>
   <style>
     body {
@@ -98,7 +98,6 @@
       text-align: left;
     }
 
-    /* نوار ناوبری */
     .sub-header-bar {
       background-color: #f8f5f0;
       font-family: 'Rabar_029', sans-serif;
@@ -114,7 +113,7 @@
       font-size: 1.1rem;
       flex-wrap: nowrap;
       overflow-x: auto;
-      gap: 1rem;
+      gap: 1.5rem;
       box-sizing: border-box;
     }
 
@@ -122,19 +121,21 @@
       position: relative;
       white-space: nowrap;
       padding: 0.3rem 0;
+      box-sizing: border-box;
     }
 
-    .nav-menu li:not(:last-child)::after {
+    .nav-menu li::before {
       content: "|";
       color: rgba(0, 0, 0, 0.2);
       position: absolute;
-      left: -0.5rem;
+      left: -0.8rem;
       top: 50%;
       transform: translateY(-50%);
     }
 
-    .nav-menu li:first-child::after {
-      content: none;
+    .nav-menu li:first-child::before {
+      content: "|";
+      left: -0.5rem;
     }
 
     .nav-menu a {
@@ -160,15 +161,15 @@
       background: #f8f5f0;
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      padding: 0.5rem 0;
+      padding: 0.3rem 0;
       z-index: 10;
       min-width: 100px;
     }
 
     .dropdown-menu li {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
 
     .dropdown-menu a {
@@ -177,6 +178,7 @@
       color: #222;
       text-decoration: none;
       border-radius: 4px;
+      transition: background 0.3s;
     }
 
     .dropdown-menu a:hover {
