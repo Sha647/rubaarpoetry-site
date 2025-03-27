@@ -112,9 +112,9 @@
       margin: 0;
       font-size: 1.1rem;
       flex-wrap: nowrap;
-      overflow-x: auto;
       gap: 2rem;
       box-sizing: border-box;
+      position: relative; /* New */
     }
 
     .nav-menu li {
@@ -172,6 +172,7 @@
       padding: 0.5rem 0;
       z-index: 10;
       min-width: 120px;
+      transition: none; /* New */
     }
 
     .dropdown-menu li {
@@ -191,10 +192,11 @@
     }
 
     .dropdown-menu a:hover {
-      background-color: transparent;
+      background-color: rgba(62, 63, 91, 0.1);
     }
 
-    .dropdown:hover .dropdown-menu {
+    .dropdown:hover .dropdown-menu,
+    .dropdown-menu:hover {
       display: block;
     }
 
@@ -277,8 +279,8 @@
       <li><a href="#">شیعر</a></li>
       <li><a href="#">کتێب</a></li>
       <li class="dropdown">
-        <a href="#">گشتی</a>
-        <ul class="dropdown-menu">
+        <a href="#" onclick="toggleDropdown(event)">گشتی</a>
+        <ul class="dropdown-menu" id="dropdown-menu">
           <li><a href="#">گوتار</a></li>
           <li><a href="#">گفتوگۆ</a></li>
         </ul>
@@ -302,6 +304,22 @@
         icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
       }
     }
+
+    function toggleDropdown(event) {
+      event.preventDefault();
+      const dropdown = document.getElementById('dropdown-menu');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('dropdown-menu');
+      const dropdownLink = event.target.closest('.dropdown');
+      
+      if (!dropdownLink) {
+        dropdown.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
