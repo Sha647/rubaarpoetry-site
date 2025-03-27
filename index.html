@@ -111,10 +111,6 @@
       position: relative;
     }
 
-    .dropdown-toggle {
-      cursor: pointer;
-    }
-
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -213,7 +209,7 @@
       <li><a href="#">شیعر</a></li>
       <li><a href="#">کتێب</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">گشتی</a>
+        <a href="#" onclick="toggleDropdown(event)">گشتی</a>
         <ul class="dropdown-menu">
           <li><a href="#">گوتار</a></li>
           <li><a href="#">گفتوگۆ</a></li>
@@ -239,7 +235,6 @@
       dropdown.classList.toggle('open');
     }
 
-    // Close dropdown when clicking outside
     document.addEventListener('click', function (e) {
       const isDropdown = e.target.closest('.dropdown');
       document.querySelectorAll('.dropdown').forEach(drop => {
