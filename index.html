@@ -32,7 +32,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       gap: 60px;
     }
 
@@ -42,24 +41,6 @@
 
     .logo {
       height: 120px;
-    }
-
-    .theme-toggle {
-      position: absolute;
-      right: 1rem;
-      bottom: 0.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-      stroke: #EEEEEE;
-      fill: none;
-      stroke-width: 1.8px;
     }
 
     .sub-header-bar {
@@ -105,39 +86,6 @@
 
     .nav-menu a:hover {
       background-color: rgba(62, 63, 91, 0.1);
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background: #f8f5f0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 10;
-      min-width: 120px;
-      margin-top: 0.3rem;
-    }
-
-    .dropdown-menu li {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: #222;
-      text-decoration: none;
-    }
-
-    .dropdown.open .dropdown-menu {
-      display: block;
     }
 
     main {
@@ -193,11 +141,6 @@
 
   <div class="header-bar">
     <div class="header-container">
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="toggle theme">
-        <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
-        </svg>
-      </button>
       <img src="logorubar.png" alt="Logo" class="logo">
       <div class="header-title">ماڵپەڕی ڕووبار</div>
     </div>
@@ -208,13 +151,7 @@
       <li><a href="#">سەرەتا</a></li>
       <li><a href="#">شیعر</a></li>
       <li><a href="#">کتێب</a></li>
-      <li class="dropdown">
-        <a href="#" onclick="toggleDropdown(event)">گشتی</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">گوتار</a></li>
-          <li><a href="#">گفتوگۆ</a></li>
-        </ul>
-      </li>
+      <li><a href="#">گشتی</a></li>
       <li><a href="#">هاوکارانی ڕووبار</a></li>
     </ul>
   </nav>
@@ -223,27 +160,6 @@
     <p>ماڵپەڕ لەژێر درووستکردندایە</p>
     <p class="ltr">rubaarpoetry.com</p>
   </main>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-    }
-
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const dropdown = event.target.closest('.dropdown');
-      dropdown.classList.toggle('open');
-    }
-
-    document.addEventListener('click', function (e) {
-      const isDropdown = e.target.closest('.dropdown');
-      document.querySelectorAll('.dropdown').forEach(drop => {
-        if (drop !== isDropdown) {
-          drop.classList.remove('open');
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>
