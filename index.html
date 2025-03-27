@@ -88,6 +88,54 @@
       background-color: rgba(62, 63, 91, 0.1);
     }
 
+    /* Dropdown menu styling */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown:hover .submenu,
+    .dropdown:focus-within .submenu {
+      display: block;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: transparent;
+      padding-top: 0.4rem;
+      z-index: 100;
+    }
+
+    .submenu li {
+      background-color: #f0f0f0;
+      margin-bottom: 4px;
+      border-radius: 4px;
+      width: fit-content;
+      min-width: 5.2rem; /* برابر با گفتوگۆ */
+      padding: 0;
+    }
+
+    .submenu li a {
+      display: block;
+      padding: 6px 10px;
+      color: #222;
+      text-decoration: none;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .submenu li a:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Ensure divider line does not shift */
+    .nav-menu > li.dropdown::after {
+      left: -0.8rem;
+    }
+
     main {
       flex: 1;
       display: flex;
@@ -151,7 +199,13 @@
       <li><a href="#">سەرەتا</a></li>
       <li><a href="#">شیعر</a></li>
       <li><a href="#">کتێب</a></li>
-      <li><a href="#">گشتی</a></li>
+      <li class="dropdown">
+        <a href="#">گشتی</a>
+        <ul class="submenu">
+          <li><a href="#">گوتار</a></li>
+          <li><a href="#">گفتوگۆ</a></li>
+        </ul>
+      </li>
       <li><a href="#">هاوکارانی ڕووبار</a></li>
     </ul>
   </nav>
