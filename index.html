@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rubaarpoetry</title>
+  <title>ماڵپەڕی ڕووبار - سەرەتا</title>
   <style>
     :root {
       --bg-light: #eeeeee;
@@ -16,6 +16,8 @@
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html, body {
@@ -185,6 +187,63 @@
       direction: ltr;
     }
 
+    .gallery-wrapper {
+      margin: 3rem auto;
+      padding: 0 20px;
+      max-width: 1000px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: nowrap;
+    }
+
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      filter: grayscale(100%);
+    }
+
+    .gallery-item img {
+      width: 150px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 16px 16px 8px 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item.center img {
+      width: 260px;
+      height: 360px;
+      transform: scale(1.05);
+      border-radius: 24px 24px 16px 16px;
+    }
+
+    .gallery-item .title {
+      font-family: 'Rabar_029', sans-serif;
+      font-size: 1.2rem;
+      color: #111;
+      margin-top: 0.5rem;
+    }
+
+    .center .title {
+      font-size: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        flex-direction: column;
+      }
+    }
+
     @media (max-width: 480px) {
       .logo {
         height: 60px;
@@ -231,8 +290,22 @@
   </nav>
 
   <main>
-    <p>ماڵپەڕ ئامادە نییە</p>
-    <p class="ltr">rubaarpoetry.com</p>
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="assets/images/elet.jpg" alt="T.S. Eliot">
+          <div class="title">عنوان شعر</div>
+        </div>
+        <div class="gallery-item center">
+          <img src="assets/images/poets.png" alt="Main Poem">
+          <div class="title">عنوان شعر</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/Eluard_Harcourt_1945.jpg" alt="Paul Éluard">
+          <div class="title">عنوان شعر</div>
+        </div>
+      </div>
+    </div>
   </main>
 </body>
 </html>
