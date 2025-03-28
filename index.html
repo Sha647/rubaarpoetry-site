@@ -35,11 +35,7 @@
       background-color: var(--bg-light);
       color: var(--text-light);
       transition: background-color 0.3s, color 0.3s;
-      background-image: repeating-radial-gradient(
-        circle,
-        rgba(0, 0, 0, 0.04) 0,
-        transparent 1.2px
-      );
+      background-image: repeating-radial-gradient(circle, rgba(0, 0, 0, 0.04) 0, transparent 1.2px);
       background-size: 3px 3px;
       background-repeat: repeat;
     }
@@ -50,7 +46,7 @@
       font-family: 'Rabar_029', sans-serif;
       font-size: 1.4rem;
       font-weight: bold;
-      padding: 10px 0;
+      padding: 8px 0;
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -66,12 +62,8 @@
       gap: 60px;
     }
 
-    .header-title {
-      margin: 0;
-    }
-
     .logo {
-      height: 100px;
+      height: 90px;
       display: block;
     }
 
@@ -87,7 +79,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
       margin: 0;
       font-size: 1.1rem;
       gap: 1.5rem;
@@ -122,10 +114,7 @@
       text-decoration: none;
       color: inherit;
       padding: 6px 8px;
-      display: inline-block;
       border-radius: 4px;
-      background-color: transparent;
-      position: relative;
       transition: background-color 0.3s;
     }
 
@@ -164,13 +153,7 @@
       display: block;
       padding: 4px 8px;
       font-size: 0.9rem;
-      white-space: nowrap;
       color: #333;
-      transition: background-color 0.2s;
-    }
-
-    .dropdown a:hover {
-      background-color: rgba(0,0,0,0.05);
     }
 
     main {
@@ -180,11 +163,6 @@
       justify-content: flex-start;
       align-items: center;
       padding: 2rem 2rem 2rem;
-      text-align: center;
-    }
-
-    .ltr {
-      direction: ltr;
     }
 
     .gallery-wrapper {
@@ -192,7 +170,6 @@
       padding: 0 20px;
       max-width: 1000px;
       text-align: center;
-      overflow: hidden;
     }
 
     .gallery {
@@ -200,7 +177,6 @@
       justify-content: center;
       align-items: flex-end;
       gap: 2rem;
-      flex-wrap: nowrap;
     }
 
     .gallery-item {
@@ -212,7 +188,7 @@
     }
 
     .gallery-item:hover {
-      transform: scale(1.01);
+      transform: scale(1.005);
     }
 
     .gallery-item img {
@@ -232,50 +208,37 @@
     .gallery-item.center img {
       width: 260px;
       height: 360px;
-      transform: scale(1.01);
-      border-radius: 24px;
+      transform: scale(1.005);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
     }
 
     .gallery-item.center:hover img {
-      transform: scale(1.04);
+      transform: scale(1.02);
+    }
+
+    .gallery-titles {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
     }
 
     .gallery-title {
       font-family: 'Rabar_029', sans-serif;
       font-size: 1.2rem;
       color: #111;
-      margin-top: 0.8rem;
     }
 
-    .gallery-item.center + .gallery-title {
+    .gallery-title.center {
       font-size: 1.8rem;
-      margin-top: 1.2rem;
     }
 
     @media (max-width: 768px) {
       .gallery {
         flex-direction: column;
       }
-    }
-
-    @media (max-width: 480px) {
-      .logo {
-        height: 60px;
-      }
-      .header-bar {
-        font-size: 1.2rem;
-      }
-      .nav-menu {
-        font-size: 0.85rem;
-        gap: 0.6rem;
-        padding: 0.4rem;
-      }
-      .nav-menu > li:not(:last-child)::after {
-        left: -0.3rem;
-      }
-      .nav-menu a {
-        padding: 4px 6px;
+      .gallery-titles {
+        flex-direction: column;
       }
     }
   </style>
@@ -319,7 +282,7 @@
       </div>
       <div class="gallery-titles">
         <div class="gallery-title">جای مطلب اول</div>
-        <div class="gallery-title" style="font-size: 1.8rem; margin-top: 1.2rem;">جای مطلب دوم</div>
+        <div class="gallery-title center">جای مطلب دوم</div>
         <div class="gallery-title">جای مطلب سوم</div>
       </div>
     </div>
