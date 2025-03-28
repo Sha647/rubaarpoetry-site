@@ -206,14 +206,21 @@
     }
 
     .gallery-item.center img {
-      width: 260px;
-      height: 360px;
+      width: 220px;
+      height: 310px;
       transform: scale(1.005);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
     }
 
     .gallery-item.center:hover img {
       transform: scale(1.02);
+    }
+
+    .gallery-title {
+      font-family: 'Rabar_029', sans-serif;
+      font-size: 1.2rem;
+      color: #111;
+      margin-top: 0.8rem;
     }
 
     .gallery-titles {
@@ -223,14 +230,10 @@
       margin-top: 1rem;
     }
 
-    .gallery-title {
-      font-family: 'Rabar_029', sans-serif;
-      font-size: 1.2rem;
-      color: #111;
-    }
-
-    .gallery-title.center {
-      font-size: 1.8rem;
+    .gallery-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     @media (max-width: 768px) {
@@ -270,20 +273,24 @@
   <main>
     <div class="gallery-wrapper">
       <div class="gallery">
-        <div class="gallery-item">
-          <img src="Fonts/assets/images/Sherko_Bekas.jpg" alt="Sherko Bekas">
+        <div class="gallery-column">
+          <div class="gallery-item">
+            <img src="Fonts/assets/images/Sherko_Bekas.jpg" alt="Sherko Bekas">
+          </div>
+          <div class="gallery-title">جای مطلب اول</div>
         </div>
-        <div class="gallery-item center">
-          <img src="Fonts/assets/images/poets.png" alt="Main Poem">
+        <div class="gallery-column">
+          <div class="gallery-item center">
+            <img src="Fonts/assets/images/poets.png" alt="Main Poem">
+          </div>
+          <div class="gallery-title">جای مطلب دوم</div>
         </div>
-        <div class="gallery-item">
-          <img src="Fonts/assets/images/elet.jpg" alt="T.S. Eliot">
+        <div class="gallery-column">
+          <div class="gallery-item">
+            <img src="Fonts/assets/images/elet.jpg" alt="T.S. Eliot">
+          </div>
+          <div class="gallery-title">جای مطلب سوم</div>
         </div>
-      </div>
-      <div class="gallery-titles">
-        <div class="gallery-title">جای مطلب اول</div>
-        <div class="gallery-title center">جای مطلب دوم</div>
-        <div class="gallery-title">جای مطلب سوم</div>
       </div>
     </div>
   </main>
