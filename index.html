@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>rubaarpoetry</title>
   <style>
+    :root {
+      --bg-light: #f8f5f0;
+      --text-light: #222;
+      --bg-dark: #1e1e1e;
+      --text-dark: #eee;
+      --highlight: rgba(62, 63, 91, 0.1);
+      --sub-bg: #eaeaea;
+    }
+
     body {
       font-family: 'RabarText', sans-serif;
       direction: rtl;
@@ -12,8 +21,14 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background-color: #f8f5f0;
-      color: #222;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
     }
 
     .header-bar {
@@ -23,6 +38,7 @@
       font-size: 1.8rem;
       font-weight: bold;
       padding: 20px 0;
+      position: relative;
     }
 
     .header-container {
@@ -44,8 +60,26 @@
       display: block;
     }
 
+    .toggle-mode {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: none;
+      border: 1px solid #eee;
+      color: #eee;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+
+    .toggle-mode:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
     .sub-header-bar {
-      background-color: #f8f5f0;
+      background-color: var(--bg-light);
       font-family: 'Rabar_029', sans-serif;
     }
 
@@ -79,7 +113,7 @@
 
     .nav-menu a {
       text-decoration: none;
-      color: #222;
+      color: inherit;
       padding: 6px 8px;
       display: inline-block;
       border-radius: 4px;
@@ -88,7 +122,37 @@
     }
 
     .nav-menu a:hover {
-      background-color: rgba(62, 63, 91, 0.1);
+      background-color: var(--highlight);
+    }
+
+    /* زیرمنوی گشتی */
+    .nav-menu li:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: var(--sub-bg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 3px;
+      z-index: 100;
+      min-width: 80px;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      color: #333;
+    }
+
+    .dropdown a:hover {
+      background-color: rgba(0,0,0,0.05);
     }
 
     main {
@@ -143,8 +207,8 @@
 <body>
 
   <div class="header-bar">
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌓 گۆڕینی ڕووناکی</button>
     <div class="header-container">
-      <!-- بۆ ئەو تیکەی نابێت بیترسێ، دڵنیابە کە ئەم فایلەکە (logorubar.png) ڕاستە -->
       <img src="logorubar.png" alt="Logo" class="logo">
       <div class="header-title">ماڵپەڕی ڕووبار</div>
     </div>
@@ -155,15 +219,27 @@
       <li><a href="#">سەرەتا</a></li>
       <li><a href="#">شیعر</a></li>
       <li><a href="#">کتێب</a></li>
-      <li><a href="#">گشتی</a></li>
+      <li>
+        <a href="#">گشتی</a>
+        <div class="dropdown">
+          <a href="#">گوتار</a>
+          <a href="#">گفتوگۆ</a>
+        </div>
+      </li>
       <li><a href="#">هاوکارانی ڕووبار</a></li>
     </ul>
   </nav>
 
   <main>
-    <p>ماڵپەڕ لەژێر درووستکردندایە</p>
+    <p>ماڵپەڕ ئامادە نییە</p>
     <p class="ltr">rubaarpoetry.com</p>
   </main>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
 
 </body>
 </html>
