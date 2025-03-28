@@ -65,17 +65,15 @@
       left: 20px;
       top: 20px;
       background: none;
-      border: 1px solid #eee;
-      color: #eee;
-      padding: 5px 10px;
-      border-radius: 4px;
+      border: none;
+      font-size: 1.4rem;
       cursor: pointer;
-      font-size: 0.9rem;
-      transition: background 0.3s;
+      color: #eee;
+      transition: transform 0.3s;
     }
 
     .toggle-mode:hover {
-      background-color: rgba(255,255,255,0.1);
+      transform: scale(1.2);
     }
 
     .sub-header-bar {
@@ -119,28 +117,35 @@
       border-radius: 4px;
       background-color: transparent;
       position: relative;
+      transition: background-color 0.3s;
     }
 
     .nav-menu a:hover {
       background-color: var(--highlight);
     }
 
-    /* زیرمنوی گشتی */
-    .nav-menu li:hover .dropdown {
-      display: block;
-    }
-
+    /* Dropdown (گشتی) */
     .dropdown {
-      display: none;
       position: absolute;
       top: 100%;
       right: 0;
       background-color: var(--sub-bg);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 6px;
+      border-radius: 4px;
       padding: 3px;
-      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       min-width: 80px;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 100;
+    }
+
+    .nav-menu li:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .dropdown a {
@@ -149,6 +154,7 @@
       font-size: 0.9rem;
       white-space: nowrap;
       color: #333;
+      transition: background-color 0.2s;
     }
 
     .dropdown a:hover {
@@ -207,7 +213,7 @@
 <body>
 
   <div class="header-bar">
-    <button class="toggle-mode" onclick="toggleDarkMode()">🌓 گۆڕینی ڕووناکی</button>
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌙</button>
     <div class="header-container">
       <img src="logorubar.png" alt="Logo" class="logo">
       <div class="header-title">ماڵپەڕی ڕووبار</div>
