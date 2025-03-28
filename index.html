@@ -87,6 +87,12 @@
       transform: scale(1.2);
     }
 
+    @media (min-width: 481px) {
+      .toggle-mode {
+        display: none; /* Hide toggle button in desktop view */
+      }
+    }
+
     .sub-header-bar {
       background-color: var(--bg-light);
       font-family: 'Rabar_029', sans-serif;
@@ -164,7 +170,7 @@
     }
 
     .dropdown-container:hover .dropdown {
-      opacity: 1;
+      opacity: 1; /* Make dropdown visible */
       visibility: visible;
       transform: translateY(0);
     }
@@ -200,17 +206,21 @@
       .logo {
         height: 60px;
       }
+
       .header-bar {
         font-size: 1.2rem;
       }
+
       .nav-menu {
         font-size: 0.85rem;
         gap: 0.6rem;
         padding: 0.4rem;
       }
+
       .nav-menu > li:not(:last-child)::after {
         left: -0.3rem;
       }
+
       .nav-menu a {
         padding: 4px 6px;
       }
