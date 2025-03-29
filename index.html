@@ -10,6 +10,7 @@
       --text-light: #222;
       --highlight: rgba(62, 63, 91, 0.1);
       --sub-bg: #eaeaea;
+      --image-border: rgba(100, 149, 237, 0.4); /* خط آبی کم‌رنگ */
     }
 
     * {
@@ -175,6 +176,7 @@
       transform: translateZ(0);
       box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
       background: #fff;
+      border: 1px solid var(--image-border);
       backface-visibility: hidden;
       transition: transform 0.8s ease, box-shadow 0.8s ease;
     }
