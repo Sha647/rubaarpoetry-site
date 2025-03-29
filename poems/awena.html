@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شێرکۆ بێکەس - ئاوێنە</title>
+  <title>شێرکۆ بێکێس - ئاوێنێ</title>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
   <style>
-    /* فونت‌ها */
     @font-face {
       font-family: 'Rabar_019';
       src: url('../Fonts/Rabar_019.woff') format('woff');
@@ -31,70 +29,112 @@
       background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png');
       background-repeat: repeat;
       background-attachment: fixed;
+      background-size: cover;
       color: #2c2b30;
-      padding-top: 80px;
+      padding-top: 90px;
     }
 
-    /* نوار منو */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
       background-color: #3E3F5B;
       color: #fff;
-      padding: 0.6rem 1rem;
       font-family: 'Rabar_029', sans-serif;
-      font-size: 1.1rem;
+      padding: 0.8rem 1rem;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
+      gap: 2rem;
     }
 
-    .navbar ul {
+    .nav-menu {
       list-style: none;
       display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 1.5rem;
+      padding: 0;
+      margin: 0;
     }
 
-    .navbar ul li a {
-      text-decoration: none;
+    .nav-menu li {
+      position: relative;
+    }
+
+    .nav-menu a {
       color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
       transition: color 0.3s;
     }
 
-    .navbar ul li a:hover {
+    .nav-menu a:hover {
       color: #ddd;
     }
 
+    .nav-menu li.has-dropdown > a::after {
+      content: " \25BE";
+      font-size: 0.6rem;
+      margin-right: 4px;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 5px;
+      display: none;
+      min-width: 100px;
+      border-radius: 4px;
+    }
+
+    .nav-menu li.has-dropdown:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      color: #333;
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+    }
+
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+
     .logo {
-      height: 36px;
+      height: 34px;
     }
 
     .container {
       max-width: 960px;
       margin: auto;
-      background-color: rgba(62, 63, 91, 0.06); /* کمرنگ شده از نوار سایت */
+      background-color: rgba(62, 63, 91, 0.08);
       border-radius: 12px;
       padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .jumbotron {
       text-align: center;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     h1 {
-      font-family: 'Rabar_019', serif;
-      font-size: 2.6rem;
+      font-family: 'Rabar_019';
+      font-size: 2.4rem;
       color: #222;
       margin-bottom: 0.3rem;
     }
 
     .author {
-      font-family: 'Rabar_019', serif;
-      font-size: 1.3rem;
-      color: #666;
+      font-family: 'Rabar_019';
+      font-size: 1.2rem;
+      color: #aaa;
       margin-bottom: 1rem;
       position: relative;
     }
@@ -104,61 +144,52 @@
       display: block;
       height: 1px;
       width: 40%;
-      background-color: #aaa;
+      background-color: #fff;
       margin: 10px auto 0 auto;
-      opacity: 0.4;
+      opacity: 0.5;
     }
 
     .poet-image {
       display: block;
-      margin: 2rem auto 2rem auto;
+      margin: 2rem auto;
       width: 220px;
-      border-radius: 12px;
+      border-radius: 10px;
       filter: grayscale(100%);
       box-shadow: 0 0 8px rgba(0,0,0,0.15);
     }
 
     .poem-text {
-      font-family: 'Rabar_028', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       line-height: 1.85;
       white-space: pre-wrap;
       margin-top: 2rem;
-      padding: 0 0.5rem;
+      padding: 0 1rem;
     }
 
     .meta {
       margin-top: 2rem;
       font-size: 0.9rem;
-      color: #555;
+      color: #666;
       border-top: 1px solid #ccc;
       padding-top: 1rem;
       text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      .poem-text {
-        font-size: 1.1rem;
-        line-height: 1.75;
-      }
-
-      .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- نوار منو بالای صفحه -->
   <nav class="navbar">
-    <ul>
+    <ul class="nav-menu">
       <li><a href="#">سەرەتا</a></li>
       <li><a href="#">شیعر</a></li>
       <li><a href="#">کتێب</a></li>
-      <li><a href="#">گشتی</a></li>
+      <li class="has-dropdown">
+        <a href="#">گشتی</a>
+        <div class="dropdown">
+          <a href="#">گوتار</a>
+          <a href="#">گفتوگۆ</a>
+        </div>
+      </li>
       <li><a href="#">هاوکارانی ڕووبار</a></li>
     </ul>
     <img src="../logorubar.png" alt="Logo" class="logo">
@@ -166,34 +197,34 @@
 
   <div class="container">
     <div class="jumbotron">
-      <h1>ئاوێنە</h1>
-      <p class="author">شێرکۆ بێکەس</p>
+      <h1>ئاوێنێ</h1>
+      <p class="author">شێرکۆ بێکێس</p>
     </div>
 
-    <img class="poet-image" src="../Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکەس">
+    <img class="poet-image" src="../Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکێس">
 
     <div class="poem-text">
-ئەو ئاوێنەیە کە شەهید  
-قژی لەبەر دائەهێنا  
+ئەو ئاوێنێیەیە کە شەهید  
+قژی لەبەر دائەھێنا  
 ئەویش گیرا  
-ئاوێنەی دیل  
-نەیزانی چۆن خۆی دەرباز کا  
-ڕۆژێ تاوان لە گوێ چەمێ  
+ئاوێنێی دیل  
+نېیزانی چۆن خۆی دەرباز کا  
+ڕۆژێ تاوان لە گوە چەمێ  
 ڕیشی تاشی  
-ئاوێنە سەری هەڵبڕی  
+ئاوێنێ سەری ھەڵبڕی  
 «با»یەک ئەهات  
 یەک دوو چرپەی لەگەڵدا کرد  
-با خێراتر هەنگاوی نا  
-تا پاڵێکی بەمەوە نا  
-ئاوێنە خل بۆوە بۆ چەم  
-ئاو نەوەستا شەپۆل بردی  
-بۆ ئەو شوێنەی  
-چلەی شەهیدیان ئەگێڕا!
+با خێراتر ھەنگاوی نا  
+تا پاڕێکی بەمەوە نا  
+ئاوێنێ خل بۆوە بۆ چەم  
+ئاو نەوەستا شەپۆڵ بردی  
+بۆ ئەو شویەنەی  
+چەڵەی شەهیدیان ئەگێڕا!
     </div>
 
     <div class="meta">
-      <p><strong>ساڵ:</strong> ١٩٨٥</p>
-      <p><strong>لە کتێبی:</strong> ئاوێنە بچکۆلەکان</p>
+      <p><strong>ساڕ:</strong> ١٩٨٥</p>
+      <p><strong>لە کتێبی:</strong> ئاوێنێ بچکۆڵەکان</p>
     </div>
   </div>
 
