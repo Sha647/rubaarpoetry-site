@@ -64,6 +64,9 @@
     .sub-header-bar {
       background-color: transparent;
       font-family: 'Rabar_029', sans-serif;
+      overflow-x: hidden;
+      border-bottom: none;
+      box-shadow: none;
     }
 
     .nav-menu {
@@ -113,6 +116,10 @@
       background-color: var(--highlight);
     }
 
+    .dropdown-container > a {
+      cursor: pointer;
+    }
+
     .dropdown-container {
       position: relative;
     }
@@ -127,16 +134,16 @@
       padding: 3px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       min-width: 100px;
+      z-index: 999;
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
       transition: all 0.25s ease;
-      z-index: 999;
     }
 
     .dropdown-container:hover .dropdown,
     .dropdown-container:focus-within .dropdown,
-    .dropdown-container a:focus + .dropdown {
+    .dropdown-container.active .dropdown {
       display: block;
       opacity: 1;
       visibility: visible;
@@ -236,7 +243,8 @@
     @media (max-width: 768px) {
       .header-container {
         flex-direction: column;
-        gap: 10px;
+        gap: 6px;
+        padding-bottom: 0.2rem;
       }
 
       .nav-menu {
@@ -248,13 +256,14 @@
         align-items: center;
         gap: 0.2rem;
         white-space: nowrap;
-        padding: 0.1rem;
+        padding: 0.1rem 0.3rem;
         border-bottom: none;
       }
 
       .gallery {
         flex-direction: column;
         align-items: center;
+        margin-top: -8px;
       }
 
       .gallery-title {
@@ -311,5 +320,17 @@
       </div>
     </div>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const dropdownToggle = document.querySelector(".dropdown-container > a");
+      const dropdownContainer = document.querySelector(".dropdown-container");
+
+      dropdownToggle.addEventListener("click", function(e) {
+        e.preventDefault();
+        dropdownContainer.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
