@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شێرکۆ بێکەس - ئاوێنە</title>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Macondo');
-    @import url('https://fonts.googleapis.com/css?family=Raleway');
+    /* فونت‌ها */
+    @font-face {
+      font-family: 'Rabar_019';
+      src: url('../Fonts/Rabar_019.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Rabar_028';
+      src: url('../Fonts/Rabar_028.woff') format('woff');
+    }
 
     body {
-      font-family: 'Rabar_029', sans-serif;
       direction: rtl;
       background-color: #8b8d7f;
       background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png');
       background-repeat: repeat;
       background-attachment: fixed;
-      background-size: auto;
+      font-family: 'Rabar_028', sans-serif;
       color: #2c2b30;
-      padding: 1rem;
+      padding: 2rem;
     }
 
     .container {
@@ -28,39 +36,37 @@
       background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png');
       border-radius: 8px;
       padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
     .jumbotron {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     h1 {
-      font-family: 'Macondo', cursive;
-      font-size: 2.5rem;
-      color: #444;
+      font-family: 'Rabar_019', serif;
+      font-size: 2.8rem;
+      color: #222;
+      margin-bottom: 0.5rem;
     }
 
     .author {
-      font-family: 'Macondo', cursive;
-      font-size: 1.2rem;
-      color: #666;
-    }
-
-    .poem-text {
+      font-family: 'Rabar_019', serif;
       font-size: 1.3rem;
-      line-height: 2.4;
-      margin-top: 2rem;
-      white-space: pre-wrap;
+      color: #666;
+      margin-bottom: 1rem;
+      position: relative;
     }
 
-    .meta {
-      margin-top: 2rem;
-      font-size: 1rem;
-      color: #555;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
+    .author::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 30%;
+      background-color: #aaa;
+      margin: 10px auto 0 auto;
+      opacity: 0.5;
     }
 
     .poet-image {
@@ -71,15 +77,32 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
 
+    .poem-text {
+      font-family: 'Rabar_028', sans-serif;
+      font-size: 1.25rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      margin-top: 1rem;
+    }
+
+    .meta {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #555;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+
     @media (max-width: 768px) {
       .poet-image {
         float: none;
         display: block;
-        margin: 0 auto 1.5rem auto;
+        margin: 0 auto 1rem auto;
       }
 
       .poem-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
       }
     }
   </style>
@@ -92,7 +115,7 @@
       <p class="author">شێرکۆ بێکەس</p>
     </div>
 
-    <img class="poet-image" src="Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکەس">
+    <img class="poet-image" src="../Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکەس">
 
     <div class="poem-text">
 ئەو ئاوێنەیە کە شەهید  
@@ -114,7 +137,7 @@
     </div>
 
     <div class="meta">
-      <p><strong>سال:</strong> 1985</p>
+      <p><strong>ساڵ:</strong> 1985</p>
       <p><strong>لە کتێبی:</strong> ئاوێنە بچکۆلەکان</p>
     </div>
   </div>
