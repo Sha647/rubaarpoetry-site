@@ -170,8 +170,12 @@
       margin-top: -24px;
     }
 
+    .gallery-item.left {
+      margin-top: 32px; /* فاصله بیشتر در موبایل از منوبار */
+    }
+
     .gallery-item.center {
-      margin-top: 0px; /* پایین‌تر از نسخه‌های قبلی */
+      margin-top: 0px;
       z-index: 3;
     }
 
@@ -236,9 +240,10 @@
         overflow-x: auto;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 0.8rem;
         white-space: nowrap;
-        padding: 0.5rem;
+        padding: 0.3rem;
+        border-bottom: none;
       }
 
       .gallery {
