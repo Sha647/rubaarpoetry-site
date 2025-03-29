@@ -171,7 +171,7 @@
     }
 
     .gallery-item.center {
-      margin-top: -10px; /* کمی پایین‌تر از نسخه قبل */
+      margin-top: 0px; /* پایین‌تر از نسخه‌های قبلی */
       z-index: 3;
     }
 
@@ -230,11 +230,15 @@
       }
 
       .nav-menu {
+        display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         overflow-x: auto;
         justify-content: center;
-        gap: 1.2rem;
+        align-items: center;
+        gap: 1rem;
+        white-space: nowrap;
+        padding: 0.5rem;
       }
 
       .gallery {
