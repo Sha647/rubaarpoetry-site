@@ -76,6 +76,8 @@
       font-size: 1.1rem;
       gap: 1.5rem;
       white-space: nowrap;
+      position: relative;
+      z-index: 10;
     }
 
     .nav-menu > li {
@@ -116,6 +118,7 @@
     }
 
     .dropdown {
+      display: none;
       position: absolute;
       top: 100%;
       right: 0;
@@ -127,13 +130,14 @@
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
-      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+      transition: all 0.25s ease;
       z-index: 999;
     }
 
     .dropdown-container:hover .dropdown,
     .dropdown-container:focus-within .dropdown,
     .dropdown-container a:focus + .dropdown {
+      display: block;
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
@@ -242,9 +246,9 @@
         overflow-x: auto;
         justify-content: center;
         align-items: center;
-        gap: 0.3rem; /* کاهش بیشتر فاصله */ 
+        gap: 0.2rem;
         white-space: nowrap;
-        padding: 0.2rem;
+        padding: 0.1rem;
         border-bottom: none;
       }
 
