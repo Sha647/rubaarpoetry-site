@@ -34,10 +34,8 @@
       flex-direction: column;
       background-color: var(--bg-light);
       color: var(--text-light);
-      transition: background-color 0.3s, color 0.3s;
       background-image: repeating-radial-gradient(circle, rgba(0, 0, 0, 0.04) 0, transparent 1.2px);
       background-size: 3px 3px;
-      background-repeat: repeat;
     }
 
     .header-bar {
@@ -47,9 +45,6 @@
       font-size: 1.4rem;
       font-weight: bold;
       padding: 8px 0;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
     }
 
     .header-container {
@@ -64,14 +59,11 @@
 
     .logo {
       height: 90px;
-      display: block;
     }
 
     .sub-header-bar {
       background-color: transparent;
       font-family: 'Rabar_029', sans-serif;
-      position: relative;
-      z-index: 1;
     }
 
     .nav-menu {
@@ -84,7 +76,6 @@
       font-size: 1.1rem;
       gap: 1.5rem;
       white-space: nowrap;
-      position: relative;
     }
 
     .nav-menu > li {
@@ -92,11 +83,9 @@
     }
 
     .nav-menu > li.has-dropdown > a::after {
-      content: "\25BC";
+      content: "▼";
       font-size: 0.6rem;
       margin-right: 5px;
-      position: relative;
-      top: -1px;
       color: #aaa;
     }
 
@@ -138,38 +127,27 @@
       opacity: 0;
       visibility: hidden;
       transform: translateY(10px);
-      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+      transition: opacity 0.25s ease, transform 0.25s ease;
       z-index: 999;
     }
 
-    .dropdown-container:hover .dropdown,
-    .dropdown-container:focus-within .dropdown {
+    .dropdown-container:hover .dropdown {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 4px 8px;
-      font-size: 0.9rem;
-      color: #333;
     }
 
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
-      padding: 2rem 2rem 2rem;
+      padding: 2rem;
     }
 
     .gallery-wrapper {
-      margin: 2rem auto;
-      padding: 0 20px;
       max-width: 1000px;
-      text-align: center;
+      padding: 0 20px;
     }
 
     .gallery {
@@ -193,9 +171,8 @@
     }
 
     .gallery-item.center {
-      position: relative;
+      margin-top: -10px; /* کمی پایین‌تر از نسخه قبل */
       z-index: 3;
-      margin-top: -16px; /* برای بالا رفتن دقیق‌تر تصویر وسط */
     }
 
     .gallery-item:hover {
@@ -213,7 +190,6 @@
         0 -8px 16px rgba(255, 255, 255, 0.8),
         inset 0 6px 10px rgba(255, 255, 255, 0.8),
         inset 0 -6px 10px rgba(0, 0, 0, 0.35);
-      transition: transform 0.4s ease, box-shadow 0.3s ease;
     }
 
     .gallery-item.center img {
@@ -233,8 +209,8 @@
       font-size: 1.2rem;
       color: #111;
       margin-top: 1.2rem;
-      direction: rtl;
       text-align: right;
+      direction: rtl;
     }
 
     .gallery-item.center + .gallery-title {
@@ -254,9 +230,11 @@
       }
 
       .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8rem;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: center;
+        gap: 1.2rem;
       }
 
       .gallery {
@@ -266,7 +244,6 @@
 
       .gallery-title {
         text-align: center;
-        direction: rtl;
       }
     }
   </style>
