@@ -206,25 +206,7 @@
         inset 0 4px 8px rgba(255, 255, 255, 0.7);
     }
 
-    .gallery-item::before {
-      content: '';
-      position: absolute;
-      width: 90%;
-      height: 90%;
-      bottom: -8px;
-      right: 5%;
-      border-radius: 16px;
-      background-color: rgba(0, 0, 0, 0.1);
-      z-index: -1;
-      filter: blur(10px);
-    }
-
-    .gallery-item.center::before {
-      width: 94%;
-      height: 94%;
-      bottom: -14px;
-      filter: blur(14px);
-    }
+    /* حذف کامل کد مربوط به لایه زیرین عکس‌ها (::before) */
 
     .gallery-title {
       font-family: 'Rabar_029', sans-serif;
