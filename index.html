@@ -3,72 +3,282 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rubaar Poetry</title>
+  <title>ماڵپەڕی ڕووبار - سەرەتا</title>
   <style>
+    :root {
+      --bg-light: #eeeeee;
+      --text-light: #222;
+      --highlight: rgba(62, 63, 91, 0.1);
+      --sub-bg: #eaeaea;
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: sans-serif;
-      background-color: #111;
-      color: #eee;
+      font-family: 'RabarText', sans-serif;
+      direction: rtl;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    .header-bar {
+      background-color: #3E3F5B;
+      color: #EEEEEE;
+      font-family: 'Rabar_029', sans-serif;
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 8px 0;
+    }
+
+    .header-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .logo {
+      height: 90px;
+    }
+
+    .sub-header-bar {
+      font-family: 'Rabar_029', sans-serif;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.4rem 1rem;
+      font-size: 1.1rem;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav-menu > li {
+      position: relative;
+    }
+
+    .nav-menu > li.has-dropdown > a::after {
+      content: "▼";
+      font-size: 0.6rem;
+      margin-right: 5px;
+      color: #aaa;
+    }
+
+    .nav-menu > li:not(:last-child)::after {
+      content: "|";
+      color: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      left: -0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: inherit;
+      padding: 6px 8px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      background-color: var(--highlight);
+    }
+
+    .dropdown-container {
+      position: relative;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: var(--sub-bg);
+      border-radius: 4px;
+      padding: 3px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      min-width: 100px;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+    }
+
+    .dropdown-container:hover .dropdown,
+    .dropdown-container.active .dropdown {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    main {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px;
+      padding: 2rem;
     }
 
-    h1 {
-      font-family: 'Rabar_019', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    .gallery-wrapper {
+      max-width: 1000px;
+      padding: 0 20px;
     }
 
     .gallery {
       display: flex;
-      flex-direction: row;
-      gap: 20px;
-      flex-wrap: wrap;
       justify-content: center;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+      perspective: 1200px;
     }
 
-    .gallery img {
-      width: 220px;
-      height: auto;
-      border-radius: 14px;
+    .gallery-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-style: preserve-3d;
+    }
+
+    .gallery-item {
+      transform-style: preserve-3d;
       transition: transform 0.4s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .gallery img:hover {
-      transform: scale(1.04) rotate(0.4deg);
+    .gallery-item:hover {
+      transform: translateZ(60px);
     }
 
-    p.description {
+    .gallery-item img {
+      width: 150px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 16px;
+      filter: grayscale(100%);
+      transform: translateZ(0);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      background: #fff;
+      backface-visibility: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gallery-item.center img {
+      width: 220px;
+      height: 310px;
+      border-radius: 20px;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .gallery-title {
       font-family: 'Rabar_029', sans-serif;
-      font-size: 1rem;
-      margin-top: 30px;
-      max-width: 600px;
+      font-size: 1.2rem;
+      color: #111;
+      margin-top: 1.5rem;
       text-align: center;
-      line-height: 1.6;
+      font-weight: bold;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-menu {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: center;
+        gap: 0.2rem;
+      }
+
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gallery-title {
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Rubaar Poetry</h1>
-
-  <div class="gallery">
-    <img src="assets/images/image1.jpg" alt="Wêne 1" />
-    <img src="assets/images/image2.jpg" alt="Wêne 2" />
-    <img src="assets/images/image3.jpg" alt="Wêne 3" />
+  <div class="header-bar">
+    <div class="header-container">
+      <img src="logorubar.png" alt="Logo" class="logo">
+      <div class="header-title">ماڵپەڕی ڕووبار</div>
+    </div>
   </div>
 
-  <p class="description">
-    ئەم وێنه‌وانه‌، بابه‌تی ترسیم و هونه‌ر لە شێعرەکاندا نوێ دەکەنەوە. هەر یەکێکیان وشەیەک دەردەخات کە لە ناو تەواوی گۆرانییەک دا دەنگ دەدات.
-  </p>
+  <nav class="sub-header-bar">
+    <ul class="nav-menu">
+      <li><a href="#">سەرەتا</a></li>
+      <li><a href="#">شیعر</a></li>
+      <li><a href="#">کتێب</a></li>
+      <li class="has-dropdown dropdown-container">
+        <a href="#">گشتی</a>
+        <div class="dropdown">
+          <a href="#">گوتار</a>
+          <a href="#">گفتوگۆ</a>
+        </div>
+      </li>
+      <li><a href="#">هاوکارانی ڕووبار</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <div class="gallery-column">
+          <div class="gallery-item left">
+            <img src="Fonts/assets/images/Sherko_Bekas.jpg" alt="Sherko Bekas">
+          </div>
+          <div class="gallery-title">جای مطلب اول</div>
+        </div>
+        <div class="gallery-column">
+          <div class="gallery-item center">
+            <img src="Fonts/assets/images/poets.png" alt="Main Poem">
+          </div>
+          <div class="gallery-title">جای مطلب دوم</div>
+        </div>
+        <div class="gallery-column">
+          <div class="gallery-item right">
+            <img src="Fonts/assets/images/elet.jpg" alt="T.S. Eliot">
+          </div>
+          <div class="gallery-title">جای مطلب سوم</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdownToggle = document.querySelector(".dropdown-container > a");
+      const dropdownContainer = document.querySelector(".dropdown-container");
+
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdownContainer.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>
