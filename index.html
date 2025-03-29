@@ -160,12 +160,12 @@
 
     .gallery-item {
       transform-style: preserve-3d;
-      transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: transform 1.2s ease;
       will-change: transform;
     }
 
     .gallery-item:hover {
-      transform: translateZ(80px) scale(1.05);
+      transform: translateZ(30px) scale(1.015);
     }
 
     .gallery-item img {
@@ -174,16 +174,16 @@
       object-fit: cover;
       border-radius: 20px;
       filter: grayscale(100%);
-      transform: translateZ(0);
+      transform: translateZ(10px);
       background: #fff;
       backface-visibility: hidden;
       border: 1px solid var(--image-border);
-      transition: transform 0.9s ease, box-shadow 0.9s ease;
+      transition: transform 1.2s ease, box-shadow 1.2s ease;
       box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.3),
-        0 12px 24px rgba(0, 0, 0, 0.2),
-        inset 0 -4px 8px rgba(0, 0, 0, 0.15),
-        inset 0 4px 8px rgba(255, 255, 255, 0.6);
+        0 24px 48px rgba(0, 0, 0, 0.25),
+        0 8px 16px rgba(0, 0, 0, 0.15),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.12),
+        inset 0 4px 8px rgba(255, 255, 255, 0.5);
     }
 
     .gallery-title {
