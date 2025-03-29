@@ -1,49 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ku">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rubaar Poetry - Gallery</title>
+  <title>Rubaar Poetry</title>
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Rabar_019', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
 
     .gallery {
       display: flex;
+      flex-direction: row;
       gap: 20px;
-      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .gallery img {
-      width: 200px;
+      width: 220px;
       height: auto;
-      border-radius: 12px;
+      border-radius: 14px;
       transition: transform 0.4s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .gallery img:hover {
       transform: scale(1.04) rotate(0.4deg);
     }
+
+    p.description {
+      font-family: 'Rabar_029', sans-serif;
+      font-size: 1rem;
+      margin-top: 30px;
+      max-width: 600px;
+      text-align: center;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
+  <h1>Rubaar Poetry</h1>
+
   <div class="gallery">
-    <img src="assets/images/image1.jpg" alt="Image 1" />
-    <img src="assets/images/image2.jpg" alt="Image 2" />
-    <img src="assets/images/image3.jpg" alt="Image 3" />
+    <img src="assets/images/image1.jpg" alt="Wêne 1" />
+    <img src="assets/images/image2.jpg" alt="Wêne 2" />
+    <img src="assets/images/image3.jpg" alt="Wêne 3" />
   </div>
+
+  <p class="description">
+    ئەم وێنه‌وانه‌، بابه‌تی ترسیم و هونه‌ر لە شێعرەکاندا نوێ دەکەنەوە. هەر یەکێکیان وشەیەک دەردەخات کە لە ناو تەواوی گۆرانییەک دا دەنگ دەدات.
+  </p>
 </body>
 </html>
