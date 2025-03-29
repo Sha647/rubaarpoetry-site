@@ -58,8 +58,8 @@
       padding: 0 20px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 60px;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -77,12 +77,13 @@
     .nav-menu {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       padding: 0.4rem 1rem;
       margin: 0;
       font-size: 1.1rem;
-      gap: 1.5rem;
+      gap: 1.2rem;
       white-space: nowrap;
       position: relative;
     }
@@ -177,6 +178,7 @@
       justify-content: center;
       align-items: flex-end;
       gap: 2rem;
+      flex-wrap: wrap;
     }
 
     .gallery-item {
@@ -199,41 +201,46 @@
       border-radius: 24px;
       background-color: #fdfdfd;
       box-shadow:
-        0 6px 12px rgba(0, 0, 0, 0.2),
-        0 -3px 6px rgba(255, 255, 255, 0.6),
-        inset 0 2px 3px rgba(255, 255, 255, 0.5),
-        inset 0 -2px 3px rgba(0, 0, 0, 0.15);
+        0 8px 16px rgba(0, 0, 0, 0.25),
+        0 -4px 8px rgba(255, 255, 255, 0.65),
+        inset 0 3px 6px rgba(255, 255, 255, 0.6),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.2);
       transition: transform 0.4s ease, box-shadow 0.3s ease;
     }
 
     .gallery-item.center {
       position: relative;
       z-index: 3;
+      margin-top: 20px;
     }
 
     .gallery-item.center img {
       width: 220px;
       height: 310px;
-      transform: scale(1.02);
+      transform: scale(1.025);
       border-radius: 28px;
       box-shadow:
-        0 10px 20px rgba(0, 0, 0, 0.3),
-        0 -4px 8px rgba(255, 255, 255, 0.6),
-        inset 0 3px 5px rgba(255, 255, 255, 0.6),
-        inset 0 -3px 5px rgba(0, 0, 0, 0.2);
+        0 14px 28px rgba(0, 0, 0, 0.35),
+        0 -5px 10px rgba(255, 255, 255, 0.65),
+        inset 0 4px 6px rgba(255, 255, 255, 0.65),
+        inset 0 -4px 6px rgba(0, 0, 0, 0.25);
     }
 
     .gallery-item.center:hover img {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .gallery-title {
       font-family: 'Rabar_029', sans-serif;
       font-size: 1.2rem;
       color: #111;
-      margin-top: 0.8rem;
-      direction: ltr;
-      text-align: left;
+      margin-top: 1.2rem;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .gallery-item.center + .gallery-title {
+      margin-top: 1.8rem;
     }
 
     .gallery-column {
@@ -245,6 +252,22 @@
     @media (max-width: 768px) {
       .gallery {
         flex-direction: column;
+        align-items: center;
+      }
+
+      .gallery-column {
+        align-items: center;
+        text-align: center;
+      }
+
+      .header-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-menu {
+        flex-wrap: wrap;
+        gap: 0.8rem;
       }
     }
   </style>
