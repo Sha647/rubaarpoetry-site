@@ -22,8 +22,6 @@
 
     html, body {
       overflow-x: hidden;
-      margin: 0;
-      padding: 0;
     }
 
     body {
@@ -62,11 +60,7 @@
     }
 
     .sub-header-bar {
-      background-color: transparent;
       font-family: 'Rabar_029', sans-serif;
-      overflow-x: hidden;
-      border-bottom: none;
-      box-shadow: none;
     }
 
     .nav-menu {
@@ -101,7 +95,6 @@
       left: -0.5rem;
       top: 50%;
       transform: translateY(-50%);
-      pointer-events: none;
     }
 
     .nav-menu a {
@@ -114,10 +107,6 @@
 
     .nav-menu a:hover {
       background-color: var(--highlight);
-    }
-
-    .dropdown-container > a {
-      cursor: pointer;
     }
 
     .dropdown-container {
@@ -142,7 +131,6 @@
     }
 
     .dropdown-container:hover .dropdown,
-    .dropdown-container:focus-within .dropdown,
     .dropdown-container.active .dropdown {
       display: block;
       opacity: 1;
@@ -193,13 +181,13 @@
       object-fit: cover;
       border-radius: 16px;
       background-color: #fdfdfd;
+      filter: grayscale(100%);
       box-shadow:
         0 16px 24px rgba(0, 0, 0, 0.35),
         0 4px 8px rgba(0, 0, 0, 0.2),
         inset 0 -3px 6px rgba(0, 0, 0, 0.15),
         inset 0 3px 6px rgba(255, 255, 255, 0.7);
       transform: translateZ(15px);
-      position: relative;
       border: 1px solid rgba(255, 255, 255, 0.6);
     }
 
@@ -208,6 +196,7 @@
       height: 310px;
       transform: translateZ(30px);
       border-radius: 20px;
+      filter: grayscale(100%);
       box-shadow:
         0 24px 48px rgba(0, 0, 0, 0.45),
         0 10px 20px rgba(0, 0, 0, 0.3),
@@ -338,11 +327,11 @@
   </main>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const dropdownToggle = document.querySelector(".dropdown-container > a");
       const dropdownContainer = document.querySelector(".dropdown-container");
 
-      dropdownToggle.addEventListener("click", function(e) {
+      dropdownToggle.addEventListener("click", function (e) {
         e.preventDefault();
         dropdownContainer.classList.toggle("active");
       });
