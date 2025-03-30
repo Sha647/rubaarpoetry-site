@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شێرکۆ بێکەس - خۆزگە</title>
+  <title>شێرکۆ بێکەس - خۆزگێ</title>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -32,47 +32,30 @@
       font-size: 2.8rem;
       color: #333;
       margin-bottom: 0.2rem;
-      position: relative;
       display: inline-block;
-      padding-bottom: 0.6rem;
+    }
+
+    .title-bg {
+      background-color: rgba(161, 226, 254, 0.4);
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 5px;
     }
 
     .author {
       font-family: 'Macondo', regular;
       font-size: 1rem;
-      color: #777;
+      color: white;
       margin-top: -0.2rem;
       margin-bottom: 1rem;
-      position: relative;
       display: inline-block;
-      padding-bottom: 0.6rem;
     }
 
-    h1::after, .author::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 130%;
-      height: 18px;
-      background-image: url('https://i.postimg.cc/wTqYH0wJ/brush-stroke-light.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      opacity: 0.6;
-      animation: brushFadeIn 2.5s ease-out forwards;
-    }
-
-    @keyframes brushFadeIn {
-      0% {
-        opacity: 0;
-        transform: translateX(-50%) scaleX(0.6);
-      }
-      100% {
-        opacity: 0.6;
-        transform: translateX(-50%) scaleX(1);
-      }
+    .author-bg {
+      background-color: #555;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 4px;
     }
 
     .poet-image {
@@ -107,7 +90,7 @@
       margin-top: 2rem;
       font-size: 0.75rem;
       color: #ffffff;
-      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(161, 226, 254, 0.6);
       padding-top: 1rem;
       text-align: right;
       line-height: 1.6;
@@ -124,29 +107,33 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1>خۆزگە</h1>
-      <p class="author">شێرکۆ بێکەس</p>
+      <div class="title-bg">
+        <h1>خۆزگێ</h1>
+      </div>
+      <div class="author-bg">
+        <p class="author">شێرکۆ بێکەس</p>
+      </div>
       <img src="../Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکەس" class="poet-image">
       <p class="poet-lifespan">شێرکۆ بێکەس، ١٩٤٠-٢٠١٣</p>
     </div>
     <div class="poem-text">
-هەموو شەوێ
+ھەموو شەوێ
 بە قەڵەمەکەی خۆم ئەڵێم:
 ئەگەر گڵۆپی شیعری تۆ
-هەر بە خوێنی شەهیدی نوێ
+هەر بە خویەنی شەهیدی نوێ
 دابگیرسێ!
 دەبا ئەوسا
-ئەو خۆزگەیەم بۆ بێتە دی:
+ئەو خۆزگێیەم بۆ بێتە دی:
 دەست بشکێ و
 تەمەن کورت بێ.
 دەبا ئەوسا
 چش لە تۆ بێ
-خەڵک بژی و
+خەڕک بژی و
 شیعر بمرێ!
     </div>
     <div class="meta">
       <p><strong>ساڵ:</strong> ١٩٨٥</p>
-      <p><strong>لە کتێبی:</strong> ئاوێنە بچکۆلەکان</p>
+      <p><strong>لە کتیەبی:</strong> ئاوێنە بچکۆڵێکان</p>
     </div>
   </div>
 </body>
