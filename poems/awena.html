@@ -3,155 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شێرکۆ بێکێس - ئاوێنێ</title>
+  <title>شێرکۆ بێکێس - خۆزگە</title>
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Rabar_019';
-      src: url('../Fonts/Rabar_019.woff') format('woff');
-    }
-
-    @font-face {
-      font-family: 'Rabar_028';
-      src: url('../Fonts/Rabar_028.woff') format('woff');
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      direction: rtl;
-      font-family: 'Rabar_028', sans-serif;
       background-color: #8b8d7f;
-      background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png');
-      background-repeat: repeat;
-      background-attachment: fixed;
-      background-size: cover;
+      font-family: 'Raleway', regular;
       color: #2c2b30;
-      padding-top: 90px;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: #3E3F5B;
-      color: #fff;
-      font-family: 'Rabar_029', sans-serif;
-      padding: 0.8rem 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-menu li {
-      position: relative;
-    }
-
-    .nav-menu a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
-
-    .nav-menu a:hover {
-      color: #ddd;
-    }
-
-    .nav-menu li.has-dropdown > a::after {
-      content: " \25BE";
-      font-size: 0.6rem;
-      margin-right: 4px;
-    }
-
-    .dropdown {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: #f4f4f4;
-      color: #333;
-      padding: 5px;
-      display: none;
-      min-width: 100px;
-      border-radius: 4px;
-    }
-
-    .nav-menu li.has-dropdown:hover .dropdown {
-      display: block;
-    }
-
-    .dropdown a {
-      color: #333;
-      display: block;
-      padding: 5px 10px;
-      text-decoration: none;
-    }
-
-    .dropdown a:hover {
-      background-color: #ddd;
-    }
-
-    .logo {
-      height: 34px;
+      direction: rtl;
     }
 
     .container {
-      max-width: 960px;
-      margin: auto;
-      background-color: rgba(62, 63, 91, 0.08);
-      border-radius: 12px;
+      background-color: #dddce0;
+      background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png);
       padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .jumbotron {
+      background-color: #dddce0;
+      background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png);
       text-align: center;
-      margin-bottom: 0.4rem;
+    }
+
+    .jumbotron::after {
+      content: "";
+      display: block;
+      height: 100%;
+      padding-bottom: 10px;
+      width: 40%;
+      border: 2px solid #e7e6e9;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      margin: 0 auto;
     }
 
     h1 {
-      font-family: 'Rabar_019';
-      font-size: 2.4rem;
-      color: #222;
+      font-family: 'Macondo', regular;
+      font-size: 2.6rem;
+      color: #817f8d;
       margin-bottom: 0.3rem;
     }
 
     .author {
-      font-family: 'Rabar_019';
-      font-size: 1.2rem;
-      color: #aaa;
+      font-family: 'Macondo', regular;
+      font-size: 1.3rem;
+      color: #eee;
       margin-bottom: 1rem;
-      position: relative;
-    }
-
-    .author::after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 40%;
-      background-color: #fff;
-      margin: 10px auto 0 auto;
-      opacity: 0.5;
     }
 
     .poet-image {
       display: block;
-      margin: 2rem auto;
+      margin: 1rem auto 2rem auto;
       width: 220px;
       border-radius: 10px;
       filter: grayscale(100%);
@@ -160,73 +64,50 @@
 
     .poem-text {
       font-size: 1.2rem;
-      line-height: 1.85;
+      line-height: 2.2;
       white-space: pre-wrap;
       margin-top: 2rem;
       padding: 0 1rem;
+      direction: rtl;
     }
 
     .meta {
+      direction: rtl;
       margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #666;
+      font-size: 0.75rem;
+      color: #aaa;
       border-top: 1px solid #ccc;
       padding-top: 1rem;
-      text-align: center;
+      text-align: right;
     }
   </style>
 </head>
 <body>
-
-  <nav class="navbar">
-    <ul class="nav-menu">
-      <li><a href="#">سەرەتا</a></li>
-      <li><a href="#">شیعر</a></li>
-      <li><a href="#">کتێب</a></li>
-      <li class="has-dropdown">
-        <a href="#">گشتی</a>
-        <div class="dropdown">
-          <a href="#">گوتار</a>
-          <a href="#">گفتوگۆ</a>
-        </div>
-      </li>
-      <li><a href="#">هاوکارانی ڕووبار</a></li>
-    </ul>
-    <img src="../logorubar.png" alt="Logo" class="logo">
-  </nav>
-
   <div class="container">
     <div class="jumbotron">
-      <h1>ئاوێنێ</h1>
-      <p class="author">شێرکۆ بێکێس</p>
+      <h1>خۆزگە</h1>
+      <p class="author">شێرکۆ بێکەس</p>
+      <img src="../Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکێس" class="poet-image">
     </div>
-
-    <img class="poet-image" src="../Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکێس">
-
     <div class="poem-text">
-ئەو ئاوێنێیەیە کە شەهید  
-قژی لەبەر دائەھێنا  
-ئەویش گیرا  
-ئاوێنێی دیل  
-نېیزانی چۆن خۆی دەرباز کا  
-ڕۆژێ تاوان لە گوە چەمێ  
-ڕیشی تاشی  
-ئاوێنێ سەری ھەڵبڕی  
-«با»یەک ئەهات  
-یەک دوو چرپەی لەگەڵدا کرد  
-با خێراتر ھەنگاوی نا  
-تا پاڕێکی بەمەوە نا  
-ئاوێنێ خل بۆوە بۆ چەم  
-ئاو نەوەستا شەپۆڵ بردی  
-بۆ ئەو شویەنەی  
-چەڵەی شەهیدیان ئەگێڕا!
+      هەموو شەوێ
+      بە قەڵەمەکەی خۆم ئەڵێم:
+      ئەگەر گڵۆپی شیعری تۆ
+      هەر بە خوێنی شەهیدی نوێ
+      دابگیرسێ!
+      دەبا ئەوسا
+      ئەو خۆزگەیەم بۆ بێتە دی:
+      دەست بشکێ و
+      تەمەن کورت بێ.
+      دەبا ئەوسا
+      چش لە تۆ بێ
+      خەڵک بژی و
+      شیعر بمرێ!
     </div>
-
     <div class="meta">
-      <p><strong>ساڕ:</strong> ١٩٨٥</p>
-      <p><strong>لە کتێبی:</strong> ئاوێنێ بچکۆڵەکان</p>
+      <p><strong>ساڵ:</strong> ١٩٨٥</p>
+      <p><strong>لە کتێبی:</strong> ئاوێنە بچکۆلەکان</p>
     </div>
   </div>
-
 </body>
 </html>
