@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <style>
     body {
-      background-color: rgba(161, 226, 254, 0.05); /* نامرئی ولی موجود */
+      background-color: rgba(161, 226, 254, 0.05);
       font-family: 'Raleway', regular;
       color: #2c2b30;
       direction: rtl;
@@ -32,6 +32,9 @@
       font-size: 2.8rem;
       color: #333;
       margin-bottom: 0.2rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.6rem;
     }
 
     .author {
@@ -40,6 +43,36 @@
       color: #777;
       margin-top: -0.2rem;
       margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.6rem;
+    }
+
+    h1::after, .author::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130%;
+      height: 18px;
+      background-image: url('https://i.postimg.cc/wTqYH0wJ/brush-stroke-light.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.6;
+      animation: brushFadeIn 2.5s ease-out forwards;
+    }
+
+    @keyframes brushFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scaleX(0.6);
+      }
+      100% {
+        opacity: 0.6;
+        transform: translateX(-50%) scaleX(1);
+      }
     }
 
     .poet-image {
