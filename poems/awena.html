@@ -27,18 +27,6 @@
       text-align: center;
     }
 
-    .jumbotron::after {
-      content: "";
-      display: block;
-      height: 100%;
-      padding-bottom: 10px;
-      width: 220px;
-      border: 2px solid #ffffff;
-      border-top: none;
-      border-radius: 0 0 4px 4px;
-      margin: 0 auto;
-    }
-
     h1 {
       font-family: 'Macondo', regular;
       font-size: 2.8rem;
@@ -60,13 +48,14 @@
       width: 220px;
       border-radius: 10px;
       filter: grayscale(100%);
-      box-shadow: 0 0 0 3px white;
+      box-shadow: 0 0 0 2px #f2f2f2;
     }
 
     .poet-lifespan {
       text-align: right;
       font-size: 0.8rem;
-      color: #ccc;
+      color: #aaa;
+      font-weight: 500;
       margin: 0.4rem auto 2rem auto;
       width: 220px;
     }
@@ -86,9 +75,16 @@
       margin-top: 2rem;
       font-size: 0.75rem;
       color: #ffffff;
-      border-top: 1px solid #ffffff;
+      border-top: 1px solid #eee;
       padding-top: 1rem;
       text-align: right;
+      line-height: 1.6;
+    }
+
+    @media screen and (max-width: 600px) {
+      .poem-text {
+        padding: 0 1.5rem;
+      }
     }
   </style>
 </head>
