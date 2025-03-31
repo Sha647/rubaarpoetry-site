@@ -16,7 +16,7 @@
     }
 
     .container {
-      background-color: transparent;
+      background-color: #8b8d7f; /* حاشیه زیتونی */
       background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png);
       padding: 3rem 1rem;
     }
@@ -34,7 +34,8 @@
     .title-bg,
     .author-bg,
     .poet-image,
-    .poet-lifespan-bg {
+    .poet-lifespan-bg,
+    .poet-date-bg {
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -43,7 +44,7 @@
     }
 
     .title-bg {
-      background-color: #8b8d7f; /* رنگ زیتونی برگرفته از طراحی رمبو */
+      background-color: #8b8d7f;
       width: 253px;
       margin-bottom: 0.2rem;
       padding: 0.3rem 0;
@@ -53,7 +54,7 @@
     h1 {
       font-family: 'Rabar_019', cursive;
       font-size: 2.2rem;
-      color: #fff; /* سفید */
+      color: #fff;
       margin: 0;
     }
 
@@ -86,22 +87,40 @@
     .poet-lifespan-bg {
       width: 253px;
       height: 20px;
-      margin-bottom: 2rem;
-      background-color: rgba(80, 80, 80, 0.4);
+      margin-bottom: 0.4rem;
+      background-color: #d3d4cf; /* زیتونی بسیار کم‌رنگ */
       border-radius: 3px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding-right: 0.6rem;
-      box-sizing: border-box;
+      justify-content: center;
+      padding: 0 0.6rem;
     }
 
     .poet-lifespan {
       font-size: 0.65rem;
-      color: white;
+      color: #111; /* سیاه */
       margin: 0;
-      text-align: right;
+      text-align: center;
       direction: rtl;
+    }
+
+    .poet-date-bg {
+      width: 253px;
+      height: 20px;
+      margin-bottom: 2rem;
+      background-color: #e6e7e2; /* رنگ کم‌رنگ‌تر */
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.6rem;
+    }
+
+    .poet-date {
+      font-size: 0.65rem;
+      color: #111;
+      margin: 0;
+      text-align: center;
     }
 
     .poem-text {
@@ -139,7 +158,8 @@
       .title-bg,
       .author-bg,
       .poet-image,
-      .poet-lifespan-bg {
+      .poet-lifespan-bg,
+      .poet-date-bg {
         width: 85%;
         max-width: 253px;
       }
@@ -163,6 +183,9 @@
       <img src="../Fonts/assets/images/Sherko_Bekas.jpg" alt="شێرکۆ بێکەس" class="poet-image">
       <div class="poet-lifespan-bg">
         <p class="poet-lifespan">شێرکۆ بێکەس، ١٩٤٠-٢٠١٣</p>
+      </div>
+      <div class="poet-date-bg">
+        <p class="poet-date">March 31, 2025</p>
       </div>
     </div>
     <div class="poem-text">
