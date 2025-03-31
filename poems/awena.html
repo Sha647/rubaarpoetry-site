@@ -24,16 +24,24 @@
     .jumbotron {
       background-color: transparent;
       background-image: none;
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
+    }
+
+    .title-bg,
+    .author-bg,
+    .poet-image,
+    .poet-lifespan-bg {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .title-bg {
       background-color: #578FCA;
       width: 253px;
-      margin: 0 auto 0.2rem auto;
+      margin-bottom: 0.2rem;
       padding: 0.3rem 0;
       border-radius: 5px;
     }
@@ -48,7 +56,7 @@
     .author-bg {
       background-color: #666;
       width: 253px;
-      margin: 0 auto 0.4rem auto;
+      margin-bottom: 0.4rem;
       padding: 0.2rem 0;
       border-radius: 4px;
     }
@@ -62,7 +70,7 @@
 
     .poet-image {
       display: block;
-      margin: 0 auto 0.4rem auto;
+      margin-bottom: 0.4rem;
       width: 253px;
       height: 276px;
       object-fit: cover;
@@ -74,7 +82,7 @@
     .poet-lifespan-bg {
       width: 253px;
       height: 20px;
-      margin: 0 auto 2rem auto;
+      margin-bottom: 2rem;
       background-color: rgba(80, 80, 80, 0.4);
       border-radius: 3px;
       display: flex;
@@ -118,9 +126,6 @@
       .poem-text {
         padding: 0 1.5rem;
         text-align: right;
-      }
-      .jumbotron {
-        align-items: center;
       }
     }
   </style>
