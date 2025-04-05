@@ -1,0 +1,36 @@
+<!-- navbar.html -->
+<div class="header-bar" style="position: sticky; top: 0; z-index: 1000; background-color: #3E3F5B;">
+    <div class="header-container" style="max-width: 960px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: center; gap: 60px;">
+      <img src="logorubar.png" alt="Logo" class="logo" style="height: 90px;">
+      <div class="header-title" style="font-family: 'Rabar_029', sans-serif; font-size: 1.4rem; font-weight: bold; color: black;">ماڵپەڕی ڕووبار</div>
+    </div>
+  </div>
+  
+  <nav class="sub-header-bar" style="font-family: 'Rabar_029', sans-serif; background-color: #f0f0f0; position: sticky; top: 90px; z-index: 999;">
+    <ul class="nav-menu" style="list-style: none; display: flex; justify-content: center; align-items: center; padding: 0.4rem 1rem; font-size: 1.1rem; gap: 1.5rem; position: relative; z-index: 10;">
+      <li><a href="/index.html" style="text-decoration: none; color: black; padding: 6px 8px; border-radius: 4px;">سەرەتا</a></li>
+      <li><a href="#" style="text-decoration: none; color: black; padding: 6px 8px; border-radius: 4px;">شیعر</a></li>
+      <li><a href="#" style="text-decoration: none; color: black; padding: 6px 8px; border-radius: 4px;">کتێب</a></li>
+      <li class="has-dropdown dropdown-container" style="position: relative;">
+        <a href="#" style="text-decoration: none; color: black; padding: 6px 8px; border-radius: 4px;">گشتی ▼</a>
+        <div class="dropdown" style="display: none; position: absolute; top: 100%; right: 0; background-color: #eaeaea; border-radius: 4px; padding: 3px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); min-width: 100px; z-index: 999;">
+          <a href="#" style="display: block; padding: 6px 8px; color: black; text-decoration: none;">گوتار</a>
+          <a href="#" style="display: block; padding: 6px 8px; color: black; text-decoration: none;">گفتوگۆ</a>
+        </div>
+      </li>
+      <li><a href="#" style="text-decoration: none; color: black; padding: 6px 8px; border-radius: 4px;">هاوکارانی ڕووبار</a></li>
+    </ul>
+  </nav>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dropdownToggle = document.querySelector(".dropdown-container > a");
+      const dropdownMenu = document.querySelector(".dropdown-container .dropdown");
+  
+      dropdownToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+  
