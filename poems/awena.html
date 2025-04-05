@@ -9,14 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Rabar_029&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #8b8d7f; /* حاشیه زیتونی مثل رمبو */
+      background-color: #8b8d7f;
       font-family: 'Rabar_029', sans-serif;
       color: #2c2b30;
       direction: rtl;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
-      background-color: #dddce0; /* زمینه روشن مقوایی */
+      background-color: #dddce0;
       background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/262607/cardboard-flat.png);
       padding: 3rem 1rem;
     }
@@ -172,6 +174,10 @@
   </style>
 </head>
 <body>
+
+  <!-- ✅ منوبار داینامیکی -->
+  <div id="navbar-placeholder"></div>
+
   <div class="container">
     <div class="jumbotron">
       <div class="title-bg">
@@ -208,5 +214,21 @@
       <p><strong>لە کتێبی:</strong> ئاوێنە بچکۆلەکان</p>
     </div>
   </div>
+
+  <!-- ✅ اسکریپت لودکردنی navbar -->
+  <script>
+    fetch('/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+
+        // اجرای اسکریپت داخلی navbar (dropdown toggle)
+        const scripts = document.getElementById("navbar-placeholder").getElementsByTagName("script");
+        for (let i = 0; i < scripts.length; i++) {
+          eval(scripts[i].innerText);
+        }
+      });
+  </script>
+
 </body>
 </html>
